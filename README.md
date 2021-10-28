@@ -1,9 +1,9 @@
 # Data_Lake_with_Spark
 ## Introduction
-A music streaming startup, Sparkify, has grown their user base and song database even more and want to move their data warehouse to a data lake. This project aims to build an ETL("Extract, Transform, and Load") pipeline. It extracts data from AWS S3, transforms data into star schema with Spark, and then loads it back into S3 in parquet format.  
+A music streaming startup, <a href="http://millionsongdataset.com/" target="_blank">Sparkify</a>, has grown their user base and song database even more and want to move their data warehouse to a data lake. This project aims to build an ETL("Extract, Transform, and Load") pipeline. It extracts data from AWS S3, transforms data into star schema with Spark, and then loads it back into S3 in parquet format.  
  
 ## Architecture
-<img src="https://github.com/ClaireChiang91/Data_Modeling_w_Postgres/blob/main/data_model.png" width="1000">
+<img src="https://github.com/ClaireChiang91/Data_Lake_with_Spark/blob/main/pic_data_lake_w_Spark.png" width="1000">
 
 ## Datasets
 (1)Song dataset
