@@ -19,6 +19,12 @@ def create_spark_session():
         .getOrCreate()
     return spark
 def process_song_data(spark, input_data, output_data):
+    """
+    The function of process_song_data majorly loads song_data_table from S3, generate two tables 
+    as below, and write tables back to S3.
+    (1)songs_table
+    (2)artists_table
+    """
     # get filepath to song data file
     song_data = input_data + 'song_data/A/A/A/*.json'
     # read song data file
@@ -52,7 +58,15 @@ def process_song_data(spark, input_data, output_data):
     
     # write artists table to parquet files
     artists_table.write.mode('overwrite').parquet(output_data+'artists_table/')
+    
 def process_log_data(spark, input_data, output_data):
+    """
+    The function of process_log_data majorly do two tasks:
+        (1)loads log_data_table from S3 and extracts two tables, time_table and artists_table, and 
+        then loads back to S3. 
+        (2)Read output, songs_table, from the function,process_song_data, is used in by 
+        spark.read.json command.   
+    """
     # get filepath to log data file
     log_data = input_data + 'log_data/*/*/*.json'
     # read log data file
